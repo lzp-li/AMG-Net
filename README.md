@@ -1,15 +1,16 @@
 # AMG-Net: Environment-Adaptive Asymmetric Mutual Guidance for Multispectral Object Detection
 **Status:** Currently Under Review in *Pattern Analysis and Applications*.
 
-[cite_start]This repository provides the core implementation of **AMG-Net**[cite: 14]. [cite_start]To address challenges such as extreme illumination changes and the degradation of fine-grained spatial structures, AMG-Net designs an asymmetric cross-modal mutual guidance mechanism[cite: 13, 17]. [cite_start]It integrates a texture injection module (VCTI) and a structure compensation module (TPDP) [cite: 92, 93] [cite_start]to achieve the complementary enhancement of visible high-frequency textures and thermal infrared salient features[cite: 19].
+This repository provides the core implementation of **AMG-Net**. To address challenges such as extreme illumination changes and the degradation of fine-grained spatial structures, AMG-Net designs an asymmetric cross-modal mutual guidance mechanism. It integrates a texture injection module (VCTI) and a structure compensation module (TPDP) to achieve the complementary enhancement of visible high-frequency textures and thermal infrared salient features.
 
 ## 1. Prerequisites
-[cite_start]Our experiments are implemented and validated based on the following environment[cite: 179]:
-* [cite_start]**OS:** Ubuntu 24.04.3 LTS [cite: 179]
-* [cite_start]**GPU:** NVIDIA GeForce RTX 5070 Ti Laptop GPU (12GB VRAM) [cite: 179]
-* [cite_start]**Framework:** PyTorch v2.10.0, CUDA 13.0 
+Our experiments are implemented and validated based on the following environment:
+* **OS:** Ubuntu 24.04.3 LTS
+* **GPU:** NVIDIA GeForce RTX 5070 Ti Laptop GPU (12GB VRAM)
+* **Framework:** PyTorch v2.10.0, CUDA 13.0
 
 Clone this repository and install the required dependencies:
+
 ```bash
 git clone [https://github.com/lzp-li/AMG-Net.git](https://github.com/lzp-li/AMG-Net.git)
 cd AMG-Net
