@@ -13,29 +13,38 @@ Our experiments are implemented and validated based on the following environment
 Clone this repository and install the required dependencies:
 
 ```bash
-git clone https://github.com/lzp-li/AMG-Net.git
+git clone [https://github.com/lzp-li/AMG-Net.git](https://github.com/lzp-li/AMG-Net.git)
 cd AMG-Net
 pip install -r requirements.txt
+```
 
-2. Data Preparation
-Our experiments are conducted on the publicly available FLIR (aligned version) and KAIST multispectral datasets.
+## 2. Data Preparation
+Our experiments are conducted on the publicly available **FLIR** (aligned version) and **KAIST** multispectral datasets. 
 1. Download the datasets from their official repositories.
 2. Organize the images and labels in the standard YOLO format.
-3. Modify the dataset path in your .yaml configuration file (e.g., data/FLIR.yaml).
+3. Modify the dataset path in your `.yaml` configuration file (e.g., `data/FLIR.yaml`).
 
-3. Quick Start Guide
-Training
-To train the AMG-Net model from scratch on the FLIR/KAIST dataset, run the train.py script. The default input resolution is 640×640:
+## 3. Quick Start Guide
+
+### Training
+To train the AMG-Net model from scratch on the FLIR/KAIST dataset, run the `train.py` script. The default input resolution is 640×640:
+
+```bash
 python train.py --weights '' --cfg models/yolov5l.yaml --data [your_dataset_config.yaml] --epochs 60 --batch-size 8 --img-size 640 --device 0
-(Note: Please replace [your_dataset_config.yaml] with your local dataset yaml file path).
-Testing / Inference
-To evaluate the model's performance on the test set, use the test.py script:
+```
+*(Note: Please replace `[your_dataset_config.yaml]` with your local dataset yaml file path).*
+
+### Testing / Inference
+To evaluate the model's performance on the test set, use the `test.py` script:
+
+```bash
 python test.py --weights runs/train/exp/weights/best.pt --data [your_dataset_config.yaml] --img-size 640 --device 0
+```
 
-4. Main Results
+## 4. Main Results
 AMG-Net achieves state-of-the-art performance on multispectral object detection benchmarks:
-1. FLIR: 83.4% mAP@0.5 and 37.5% mAP@0.75.
-2. KAIST: The log-average miss rate (MR-all) is reduced to 6.71%.
+* **FLIR:** **83.4%** mAP@0.5 and **37.5%** mAP@0.75.
+* **KAIST:** The log-average miss rate (MR-all) is reduced to **6.71%**.
 
-Disclaimer & Code Availability
-Note: This repository currently provides the core structural implementation (models/ and common.py) and step-by-step run scripts for peer-review validation. Full pre-trained weights and highly detailed ablation configurations will be fully released upon the formal acceptance of the manuscript.
+## Disclaimer & Code Availability
+*Note: This repository currently provides the core structural implementation (`models/` and `common.py`) and step-by-step run scripts for peer-review validation. Full pre-trained weights and highly detailed ablation configurations will be fully released upon the formal acceptance of the manuscript.*
